@@ -1,0 +1,13 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+}
+@layer components {
+   .text-hover:hover { background: -webkit-linear-gradient(#eee, #333); 
+    -webkit-background-clip: text;
+     -webkit-text-fill-color: transparent; } }
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

@@ -1,0 +1,128 @@
+[
+    {
+        "title": "t-shirt",
+        "description": "A robust protective helmet designed for miners, providing safety and comfort with its reinforced structure and ergonomic design.",
+        "img": {
+            "img1": "https://i.ibb.co.com/vHRcNxB/shirt1.jpg",
+            "img2": "https://i.ibb.co.com/wQ5cyGC/shirt2.jpg",
+            "img3": "https://i.ibb.co.com/vHRcNxB/shirt1.jpg"
+        },
+        "rating": 4.8,
+        "discount": 10,
+        "price": 59.99,
+        "category": "arrivals",
+        "color": "Yellow",
+        "size": "One Size",
+        "gender": "Unisex",
+        "review": {
+            "name": "Alice Johnson",
+            "comment": "Very durable and comfortable helmet. Highly recommended!",
+            "posted": "2024-05-15"
+        }
+    },
+    {
+        "title": "t-shirt",
+        "description": "A robust protective helmet designed for miners, providing safety and comfort with its reinforced structure and ergonomic design.",
+        "img": {
+            "img1": "https://i.ibb.co.com/vHRcNxB/shirt1.jpg",
+            "img2": "https://i.ibb.co.com/wQ5cyGC/shirt2.jpg",
+            "img3": "https://i.ibb.co.com/vHRcNxB/shirt1.jpg"
+        },
+        "rating": 4.8,
+        "discount": 10,
+        "price": 59.99,
+        "category": "selling",
+        "color": "Yellow",
+        "size": "One Size",
+        "gender": "Unisex",
+        "review": {
+            "name": "Alice Johnson",
+            "comment": "Very durable and comfortable helmet. Highly recommended!",
+            "posted": "2024-05-15"
+        }
+    },
+    {
+        "title": "t-shirt",
+        "description": "A robust protective helmet designed for miners, providing safety and comfort with its reinforced structure and ergonomic design.",
+        "img": {
+            "img1": "https://i.ibb.co.com/vHRcNxB/shirt1.jpg",
+            "img2": "https://i.ibb.co.com/wQ5cyGC/shirt2.jpg",
+            "img3": "https://i.ibb.co.com/vHRcNxB/shirt1.jpg"
+        },
+        "rating": 4.8,
+        "discount": 10,
+        "price": 59.99,
+        "category": "casual",
+        "color": "Yellow",
+        "size": "One Size",
+        "gender": "Unisex",
+        "review": {
+            "name": "Alice Johnson",
+            "comment": "Very durable and comfortable helmet. Highly recommended!",
+            "posted": "2024-05-15"
+        }
+    },
+    {
+        "title": "t-shirt",
+        "description": "A robust protective helmet designed for miners, providing safety and comfort with its reinforced structure and ergonomic design.",
+        "img": {
+            "img1": "https://i.ibb.co.com/vHRcNxB/shirt1.jpg",
+            "img2": "https://i.ibb.co.com/wQ5cyGC/shirt2.jpg",
+            "img3": "https://i.ibb.co.com/vHRcNxB/shirt1.jpg"
+        },
+        "rating": 4.8,
+        "discount": 10,
+        "price": 59.99,
+        "category": "gym",
+        "color": "Yellow",
+        "size": "One Size",
+        "gender": "Unisex",
+        "review": {
+            "name": "Alice Johnson",
+            "comment": "Very durable and comfortable helmet. Highly recommended!",
+            "posted": "2024-05-15"
+        }
+    },
+    {
+        "title": "t-shirt",
+        "description": "A robust protective helmet designed for miners, providing safety and comfort with its reinforced structure and ergonomic design.",
+        "img": {
+            "img1": "https://i.ibb.co.com/vHRcNxB/shirt1.jpg",
+            "img2": "https://i.ibb.co.com/wQ5cyGC/shirt2.jpg",
+            "img3": "https://i.ibb.co.com/vHRcNxB/shirt1.jpg"
+        },
+        "rating": 4.8,
+        "discount": 10,
+        "price": 59.99,
+        "category": "partri",
+        "color": "Yellow",
+        "size": "One Size",
+        "gender": "Unisex",
+        "review": {
+            "name": "Alice Johnson",
+            "comment": "Very durable and comfortable helmet. Highly recommended!",
+            "posted": "2024-05-15"
+        }
+    },
+    {
+        "title": "t-shirt",
+        "description": "A robust protective helmet designed for miners, providing safety and comfort with its reinforced structure and ergonomic design.",
+        "img": {
+            "img1": "https://i.ibb.co.com/vHRcNxB/shirt1.jpg",
+            "img2": "https://i.ibb.co.com/wQ5cyGC/shirt2.jpg",
+            "img3": "https://i.ibb.co.com/vHRcNxB/shirt1.jpg"
+        },
+        "rating": 4.8,
+        "discount": 10,
+        "price": 59.99,
+        "category": "formal",
+        "color": "Yellow",
+        "size": "One Size",
+        "gender": "Unisex",
+        "review": {
+            "name": "Alice Johnson",
+            "comment": "Very durable and comfortable helmet. Highly recommended!",
+            "posted": "2024-05-15"
+        }
+    }
+]
