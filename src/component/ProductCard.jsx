@@ -36,7 +36,7 @@ const ProductCard = ({ item }) => {
                     />
                 </figure>
                 <div className="card-body">
-                    <h2 className="card-title">{item?.title.split(" ").slice(0, 6).join(" ")} ...</h2>
+                    <h2 className="card-title h-[56px]">{item?.title.split(" ").slice(0, 6).join(" ")} ...</h2>
 
                     <div className="rating rating-xs rating-half">
                         <input type="radio" name="rating-10" className="rating-hidden" />

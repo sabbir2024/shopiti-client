@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import Container from '../../component/Container';
 import { Link, NavLink, useLocation, useNavigate } from 'react-router';
 import GoogleSignin from './GoogleSignin';
@@ -11,7 +11,7 @@ const Login = () => {
     const location = useLocation();
     const navigate = useNavigate();
 
-    const { setLoading, signingUser, } = useContext(AuthContext);
+    const { setLoading, signingUser, user } = useContext(AuthContext);
     const from = location.state?.from?.pathname || "/";
 
 
@@ -42,7 +42,11 @@ const Login = () => {
 
     };
 
-
+    useEffect(() => {
+        if (user) {
+            navigate('/')
+        }
+    }, [user, navigate])
 
     return (
         <Container>

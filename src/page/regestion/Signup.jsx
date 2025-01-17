@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import Container from '../../component/Container';
 import { Link, NavLink, useLocation, useNavigate } from 'react-router';
 import GoogleSignin from './GoogleSignin';
@@ -115,6 +115,12 @@ const Signup = () => {
             alert('Please check your password');
         }
     };
+
+    useEffect(() => {
+        if (user) {
+            navigate('/')
+        }
+    }, [user, navigate])
 
 
     return (

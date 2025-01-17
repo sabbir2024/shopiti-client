@@ -1,33 +1,11 @@
 import { NavLink, Outlet } from "react-router";
 import Container from "../component/Container";
 import Navbar from "../UI/shared/Navbar";
-import { useContext, useEffect, useState } from "react";
-import { AuthContext } from "../provider/AuthProvider";
-import axios from "axios";
+import useUserRole from "../../hooks/useUserRole";
 
 const Dashbord = () => {
-    const { user, loading } = useContext(AuthContext);
-    const [current, setCurrent] = useState([])
-    console.log("🚀 ~ Dashbord ~ current:", current)
 
-    useEffect(() => {
-        fetchingUser()
-    }, [])
-    const fetchingUser = async () => {
-        const { data } = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/user`)
-        setCurrent(data)
-
-    }
-    if (!user) {
-        return <span className="loading loading-infinity loading-lg"></span>
-
-    }
-
-    if (!current) {
-        return <span className="loading loading-infinity loading-lg"></span>
-    }
-    const currentUser = current?.filter(u => u?.email === user?.email)
-    console.log("🚀 ~ Dashbord ~ currentUser:", currentUser[0]?.role)
+    const { role } = useUserRole();
     return (
         <Container>
             <Navbar />
@@ -56,7 +34,7 @@ const Dashbord = () => {
                             <input type="checkbox" />
                             <div className="collapse-title text-xl font-medium">Product</div>
                             <div className="collapse-content">
-                                {currentUser[0]?.role === 'admin' || currentUser[0]?.role === 'host' && <li><NavLink to={'/dashbord/add-product'}>Add Product</NavLink></li>}
+                                {role === 'admin' || role === 'host' && <li><NavLink to={'/dashbord/add-product'}>Add Product</NavLink></li>}
 
                                 <li><NavLink to={'/dashbord/product-list'}>Product List</NavLink></li>
                             </div>
