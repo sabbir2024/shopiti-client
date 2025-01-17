@@ -5,9 +5,11 @@ import { FaEdit } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
 import toast from "react-hot-toast";
 import { Link } from "react-router"
+import useUserRole from "../../../../hooks/useUserRole";
 
 const ProductList = () => {
     const [products, setProducts] = useState([]);
+    const { role } = useUserRole();
 
     useEffect(() => {
         getProduct();
@@ -71,8 +73,10 @@ const ProductList = () => {
                             <th>Title</th>
                             <th>Category</th>
                             <th>Price</th>
-                            <th>Edit</th>
-                            <th>Delete</th>
+                            {(role !== 'admin' && role !== 'host') && <th>View Detalis</th>}
+                            {role === 'admin' || role === 'host' && <th>Edit</th>}
+                            {role === 'admin' || role === 'host' && <th>Delete</th>}
+
                         </tr>
                     </thead>
                     <tbody>
@@ -105,8 +109,11 @@ const ProductList = () => {
                                     </td>
                                     <td>{item?.category}</td>
                                     <td>$ {item?.price}</td>
-                                    <td> <FaEdit /> </td>
-                                    <td> <button onClick={() => handelDelete(item?._id)} className="btn btn-outline"><MdDelete className="text-xl" /></button> </td>
+
+                                    {(role !== 'admin' && role !== 'host') && <td><Link to={`/all-product/${item?._id}`}>View</Link></td>}
+                                    {role === 'admin' || role === 'host' && <td> <FaEdit /> </td>}
+                                    {role === 'admin' || role === 'host' && <td> <button onClick={() => handelDelete(item?._id)} className="btn btn-outline"><MdDelete className="text-xl" /></button> </td>}
+
                                 </tr>
                             ))
                         ) : (
