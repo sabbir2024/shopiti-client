@@ -27,10 +27,10 @@ const ProductCard = ({ item }) => {
 
     return (
         <div>
-            <Link to={`/all-product/${item?._id}`} className="card bg-base-100 shadow-xl">
+            <Link to={`/all-product/${item?._id}`} className="card bg-base-100 shadow-xl group">
                 <figure>
                     <img
-                        className="h-[225px] w-[225px]"
+                        className="h-[225px] w-[225px] group-hover:scale-110"
                         src={item?.img1}
                         alt="Product img"
                     />

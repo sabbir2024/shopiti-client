@@ -1,17 +1,21 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { FaCertificate, FaTshirt } from "react-icons/fa";
-import { useParams } from "react-router";
+import { useNavigate, useParams } from "react-router";
 import Container from "../../component/Container";
 import ProductImg from "./ProductImg";
 import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
 import RatingReviews from "./RatingReviews";
 import FCQs from "./FCQs";
 import HomeProduct from "../home/HomeProduct";
+import toast from "react-hot-toast";
+import { AuthContext } from "../../provider/AuthProvider";
 
 const ProductDetails = () => {
     const params = useParams();
     const [product, setProduct] = useState([]);
+    const { user } = useContext(AuthContext);
+    const navigate = useNavigate();
 
 
     const url = `${import.meta.env.VITE_BACKEND_URL}/products/${params?.id}`
@@ -49,6 +53,54 @@ const ProductDetails = () => {
     const handleSizeSelect = (size) => {
         setSelectedSize(size); // Update the selected size state when clicked
     };
+
+    const handleAddToCart = async () => {
+        if (!selectedColor) {
+            toast((t) => (
+                <span>
+                    Please select a Color.
+                    <button onClick={() => toast.dismiss(t.id)}>
+                        Dismiss
+                    </button>
+                </span>
+            ));
+        }
+        if (!selectedSize) {
+            toast((t) => (
+                <span>
+                    Please select a size.
+                    <button onClick={() => toast.dismiss(t.id)}>
+                        Dismiss
+                    </button>
+                </span>
+            ));
+        }
+
+
+        const AddToCard = {
+            img: product?.img1,
+            title: product?.title,
+            discription: product?.description,
+            price: formattedDiscountPrice,
+            email: user?.email,
+            color: selectedColor,
+            size: selectedSize,
+            ProductId: product?._id
+
+        }
+        const { data } = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/add-to-card`, AddToCard, {
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+
+        console.log("🚀 ~ handleAddToCart ~ :", data)
+        if (data?.acknowledged) {
+            navigate('/dashbord/my-order-list')
+            toast.success('Successfully added to card!')
+
+        }
+    }
 
     return (
         <Container>
@@ -122,7 +174,7 @@ const ProductDetails = () => {
                                 <button className="btn join-item">{count}</button>
                                 <button onClick={handleDecrement} className="btn join-item">-</button>
                             </div>
-                            <button className="btn btn-outline">Add to Cart</button>
+                            <button onClick={handleAddToCart} className="btn btn-outline">Add to Cart</button>
                         </div>
                     </div>
                 </div>

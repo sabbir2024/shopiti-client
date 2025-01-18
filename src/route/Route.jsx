@@ -13,6 +13,7 @@ import ProductList from "../page/dashbord/product-list/ProductList";
 import AllProduct from "../page/dashbord/all-product/AllProduct";
 import ProductDetails from "../UI/product-details/ProductDitails";
 import AdminHostRoute from "./AdminHostRoute";
+import MyOrderList from "../page/dashbord/my-order/MyOrderList";
 
 
 const Route = createBrowserRouter([
@@ -55,6 +56,10 @@ const Route = createBrowserRouter([
             {
                 path: 'user-list',
                 element: <UserList />
+            },
+            {
+                path: 'my-order-list',
+                element: <MyOrderList />
             },
             {
                 path: 'add-product',

@@ -4,12 +4,14 @@ import { FaShoppingCart } from "react-icons/fa";
 import { Link, NavLink } from 'react-router'
 import { useContext } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
+import useMyOrder from "../../../hooks/useMyOrder";
 
 
 
 const Navbar = () => {
 
     const { user, logOut } = useContext(AuthContext);
+    const { order } = useMyOrder();
 
     const navLinks = <>
         <li><NavLink to={'/'}>Home</NavLink> </li>
@@ -72,8 +74,10 @@ const Navbar = () => {
                     </div>
                     <div className="flex md:hidden"> <IoSearch /> </div>
                     <div className="flex gap-4">
-
-                        {user && <div><FaShoppingCart /></div>}
+                        {user && <Link to={'/dashbord/my-order-list'} className="indicator">
+                            <span className="indicator-item badge badge-secondary">{order?.length}</span>
+                            <button className="btn"><FaShoppingCart className="text-3xl" /></button>
+                        </Link>}
                         {user ? <div><div className="dropdown dropdown-end tooltip tooltip-left" data-tip={user?.
                             displayName}>
                             <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
